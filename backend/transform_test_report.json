@@ -1,0 +1,864 @@
+[
+  {
+    "id": "builtin.dns_lookup",
+    "name": "DNS Record Lookup",
+    "category": "Infrastructure",
+    "input_types": [
+      "domain",
+      "subdomain",
+      "url",
+      "website"
+    ],
+    "output_types": [
+      "ip_address",
+      "domain",
+      "server",
+      "email"
+    ],
+    "requires_api_key": false,
+    "is_passive": true,
+    "status": "SKIP",
+    "reason": "No entity of type ['domain', 'subdomain', 'url', 'website'] in test investigation"
+  },
+  {
+    "id": "builtin.ip_geolocation",
+    "name": "IP Geolocation Lookup",
+    "category": "Geolocation",
+    "input_types": [
+      "ip_address",
+      "ipv6_address"
+    ],
+    "output_types": [
+      "country",
+      "city",
+      "organization",
+      "asn"
+    ],
+    "requires_api_key": false,
+    "is_passive": true,
+    "status": "SKIP",
+    "reason": "No entity of type ['ip_address', 'ipv6_address'] in test investigation"
+  },
+  {
+    "id": "builtin.whois_lookup",
+    "name": "WHOIS Domain Query",
+    "category": "Registration",
+    "input_types": [
+      "domain",
+      "subdomain",
+      "website"
+    ],
+    "output_types": [
+      "email",
+      "organization",
+      "server",
+      "person"
+    ],
+    "requires_api_key": false,
+    "is_passive": true,
+    "status": "SKIP",
+    "reason": "No entity of type ['domain', 'subdomain', 'website'] in test investigation"
+  },
+  {
+    "id": "builtin.reverse_dns",
+    "name": "Reverse DNS PTR Query",
+    "category": "Infrastructure",
+    "input_types": [
+      "ip_address",
+      "ipv6_address"
+    ],
+    "output_types": [
+      "domain",
+      "subdomain"
+    ],
+    "requires_api_key": false,
+    "is_passive": true,
+    "status": "SKIP",
+    "reason": "No entity of type ['ip_address', 'ipv6_address'] in test investigation"
+  },
+  {
+    "id": "builtin.subdomain_enum",
+    "name": "Subdomain Search (CT Logs)",
+    "category": "Infrastructure",
+    "input_types": [
+      "domain"
+    ],
+    "output_types": [
+      "subdomain",
+      "domain"
+    ],
+    "requires_api_key": false,
+    "is_passive": true,
+    "status": "SKIP",
+    "reason": "No entity of type ['domain'] in test investigation"
+  },
+  {
+    "id": "builtin.shodan_internetdb",
+    "name": "Shodan InternetDB Query",
+    "category": "Threat Intelligence",
+    "input_types": [
+      "ip_address"
+    ],
+    "output_types": [
+      "cve",
+      "domain",
+      "subdomain",
+      "service"
+    ],
+    "requires_api_key": false,
+    "is_passive": true,
+    "status": "SKIP",
+    "reason": "No entity of type ['ip_address'] in test investigation"
+  },
+  {
+    "id": "builtin.reverse_ip_lookup",
+    "name": "Reverse IP Lookup (Co-hosted Domains)",
+    "category": "Infrastructure",
+    "input_types": [
+      "ip_address"
+    ],
+    "output_types": [
+      "domain",
+      "subdomain"
+    ],
+    "requires_api_key": false,
+    "is_passive": true,
+    "status": "SKIP",
+    "reason": "No entity of type ['ip_address'] in test investigation"
+  },
+  {
+    "id": "builtin.username_social_search",
+    "name": "Social Media Account Enumeration",
+    "category": "Social Intelligence",
+    "input_types": [
+      "username",
+      "person"
+    ],
+    "output_types": [
+      "social_profile",
+      "github_user",
+      "twitter_profile",
+      "reddit_profile",
+      "telegram_profile",
+      "gitlab_user",
+      "url"
+    ],
+    "requires_api_key": false,
+    "is_passive": true,
+    "status": "SKIP",
+    "reason": "No entity of type ['username', 'person'] in test investigation"
+  },
+  {
+    "id": "builtin.web_tech_stack",
+    "name": "Web Tech Stack & Metadata Scraper",
+    "category": "Web OSINT",
+    "input_types": [
+      "domain",
+      "subdomain",
+      "url",
+      "website"
+    ],
+    "output_types": [
+      "service",
+      "organization",
+      "email",
+      "social_profile"
+    ],
+    "requires_api_key": false,
+    "is_passive": true,
+    "status": "SKIP",
+    "reason": "No entity of type ['domain', 'subdomain', 'url', 'website'] in test investigation"
+  },
+  {
+    "id": "builtin.bitcoin_wallet_lookup",
+    "name": "Bitcoin Wallet Explorer",
+    "category": "Cryptocurrency",
+    "input_types": [
+      "wallet",
+      "bitcoin_wallet"
+    ],
+    "output_types": [
+      "wallet"
+    ],
+    "requires_api_key": false,
+    "is_passive": true,
+    "status": "SKIP",
+    "reason": "No entity of type ['wallet', 'bitcoin_wallet'] in test investigation"
+  },
+  {
+    "id": "builtin.website_metadata",
+    "name": "Website Metadata & SEO Scraper",
+    "category": "Website Intelligence",
+    "input_types": [
+      "domain",
+      "url",
+      "website"
+    ],
+    "output_types": [
+      "info",
+      "seo_tag"
+    ],
+    "requires_api_key": false,
+    "is_passive": true,
+    "status": "SKIP",
+    "reason": "No entity of type ['domain', 'url', 'website'] in test investigation"
+  },
+  {
+    "id": "builtin.website_tech_stack",
+    "name": "Advanced Tech Stack Detection",
+    "category": "Website Intelligence",
+    "input_types": [
+      "domain",
+      "url",
+      "website"
+    ],
+    "output_types": [
+      "technology"
+    ],
+    "requires_api_key": false,
+    "is_passive": true,
+    "status": "SKIP",
+    "reason": "No entity of type ['domain', 'url', 'website'] in test investigation"
+  },
+  {
+    "id": "builtin.website_security",
+    "name": "Security Headers Analysis",
+    "category": "Website Intelligence",
+    "input_types": [
+      "domain",
+      "url",
+      "website"
+    ],
+    "output_types": [
+      "vulnerability",
+      "info"
+    ],
+    "requires_api_key": false,
+    "is_passive": true,
+    "status": "SKIP",
+    "reason": "No entity of type ['domain', 'url', 'website'] in test investigation"
+  },
+  {
+    "id": "builtin.website_social",
+    "name": "Social Media Discovery",
+    "category": "Website Intelligence",
+    "input_types": [
+      "domain",
+      "url",
+      "website"
+    ],
+    "output_types": [
+      "social_profile"
+    ],
+    "requires_api_key": false,
+    "is_passive": true,
+    "status": "SKIP",
+    "reason": "No entity of type ['domain', 'url', 'website'] in test investigation"
+  },
+  {
+    "id": "builtin.website_contacts",
+    "name": "Contact Info Discovery",
+    "category": "Website Intelligence",
+    "input_types": [
+      "domain",
+      "url",
+      "website"
+    ],
+    "output_types": [
+      "email",
+      "phone"
+    ],
+    "requires_api_key": false,
+    "is_passive": true,
+    "status": "SKIP",
+    "reason": "No entity of type ['domain', 'url', 'website'] in test investigation"
+  },
+  {
+    "id": "builtin.website_crawler",
+    "name": "Website DOM Crawler",
+    "category": "Website Intelligence",
+    "input_types": [
+      "domain",
+      "url",
+      "website"
+    ],
+    "output_types": [
+      "domain",
+      "url"
+    ],
+    "requires_api_key": false,
+    "is_passive": true,
+    "status": "SKIP",
+    "reason": "No entity of type ['domain', 'url', 'website'] in test investigation"
+  },
+  {
+    "id": "kali.theharvester",
+    "name": "theHarvester Domain OSINT",
+    "category": "Domain Intelligence",
+    "input_types": [
+      "domain",
+      "website",
+      "url"
+    ],
+    "output_types": [
+      "email",
+      "subdomain",
+      "ip_address"
+    ],
+    "requires_api_key": false,
+    "is_passive": true,
+    "status": "SKIP",
+    "reason": "No entity of type ['domain', 'website', 'url'] in test investigation"
+  },
+  {
+    "id": "kali.sherlock",
+    "name": "Sherlock Username OSINT",
+    "category": "Social Intelligence",
+    "input_types": [
+      "username"
+    ],
+    "output_types": [
+      "social_profile",
+      "url",
+      "website"
+    ],
+    "requires_api_key": false,
+    "is_passive": true,
+    "status": "SKIP",
+    "reason": "No entity of type ['username'] in test investigation"
+  },
+  {
+    "id": "kali.amass",
+    "name": "Amass (Domain Recon)",
+    "category": "Domain Intelligence",
+    "input_types": [
+      "domain"
+    ],
+    "output_types": [
+      "subdomain",
+      "ip_address"
+    ],
+    "requires_api_key": false,
+    "is_passive": true,
+    "status": "SKIP",
+    "reason": "No entity of type ['domain'] in test investigation"
+  },
+  {
+    "id": "kali.exiftool",
+    "name": "ExifTool (Metadata Extraction)",
+    "category": "Document Intelligence",
+    "input_types": [
+      "document",
+      "image",
+      "url"
+    ],
+    "output_types": [
+      "person",
+      "location",
+      "software",
+      "camera"
+    ],
+    "requires_api_key": false,
+    "is_passive": true,
+    "status": "SKIP",
+    "reason": "No entity of type ['document', 'image', 'url'] in test investigation"
+  },
+  {
+    "id": "builtin.subfinder",
+    "name": "Subfinder Subdomain Discovery",
+    "category": "Domain Intelligence",
+    "input_types": [
+      "domain"
+    ],
+    "output_types": [
+      "subdomain"
+    ],
+    "requires_api_key": false,
+    "is_passive": true,
+    "status": "SKIP",
+    "reason": "No entity of type ['domain'] in test investigation"
+  },
+  {
+    "id": "builtin.assetfinder",
+    "name": "Assetfinder Subdomain Recon",
+    "category": "Domain & DNS",
+    "input_types": [
+      "domain",
+      "website",
+      "subdomain"
+    ],
+    "output_types": [
+      "subdomain",
+      "domain"
+    ],
+    "requires_api_key": false,
+    "is_passive": true,
+    "status": "SKIP",
+    "reason": "No entity of type ['domain', 'website', 'subdomain'] in test investigation"
+  },
+  {
+    "id": "builtin.dnsrecon",
+    "name": "DNSRecon Zone & Record Recon",
+    "category": "Domain & DNS",
+    "input_types": [
+      "domain",
+      "website",
+      "subdomain"
+    ],
+    "output_types": [
+      "ip_address",
+      "mx_record",
+      "nameserver",
+      "txt_record"
+    ],
+    "requires_api_key": false,
+    "is_passive": true,
+    "status": "SKIP",
+    "reason": "No entity of type ['domain', 'website', 'subdomain'] in test investigation"
+  },
+  {
+    "id": "builtin.dns_takeover",
+    "name": "Subdomain Takeover Detector",
+    "category": "Domain & DNS",
+    "input_types": [
+      "domain",
+      "subdomain",
+      "website"
+    ],
+    "output_types": [
+      "cve",
+      "ioc",
+      "domain",
+      "cloud_asset"
+    ],
+    "requires_api_key": false,
+    "is_passive": false,
+    "status": "SKIP",
+    "reason": "No entity of type ['domain', 'subdomain', 'website'] in test investigation"
+  },
+  {
+    "id": "builtin.crt_sh",
+    "name": "crt.sh Certificate Search",
+    "category": "Certificate & TLS Intelligence",
+    "input_types": [
+      "domain"
+    ],
+    "output_types": [
+      "subdomain",
+      "certificate"
+    ],
+    "requires_api_key": false,
+    "is_passive": true,
+    "status": "SKIP",
+    "reason": "No entity of type ['domain'] in test investigation"
+  },
+  {
+    "id": "builtin.tls_inspector",
+    "name": "TLS Certificate & SAN Inspector",
+    "category": "Certificate & TLS",
+    "input_types": [
+      "domain",
+      "website",
+      "subdomain",
+      "ip_address"
+    ],
+    "output_types": [
+      "certificate",
+      "domain",
+      "company"
+    ],
+    "requires_api_key": false,
+    "is_passive": false,
+    "status": "SKIP",
+    "reason": "No entity of type ['domain', 'website', 'subdomain', 'ip_address'] in test investigation"
+  },
+  {
+    "id": "builtin.httpx",
+    "name": "HTTPX Web Service Probe",
+    "category": "Internet Asset Discovery",
+    "input_types": [
+      "domain",
+      "subdomain",
+      "ip_address",
+      "website",
+      "url"
+    ],
+    "output_types": [
+      "website",
+      "server",
+      "url"
+    ],
+    "requires_api_key": false,
+    "is_passive": false,
+    "status": "SKIP",
+    "reason": "No entity of type ['domain', 'subdomain', 'ip_address', 'website', 'url'] in test investigation"
+  },
+  {
+    "id": "builtin.whatweb",
+    "name": "WhatWeb Technology Fingerprinter",
+    "category": "Website & Web Technology",
+    "input_types": [
+      "domain",
+      "website",
+      "url",
+      "subdomain"
+    ],
+    "output_types": [
+      "company",
+      "service",
+      "cve"
+    ],
+    "requires_api_key": false,
+    "is_passive": false,
+    "status": "SKIP",
+    "reason": "No entity of type ['domain', 'website', 'url', 'subdomain'] in test investigation"
+  },
+  {
+    "id": "builtin.wafw00f",
+    "name": "Wafw00f WAF Detector",
+    "category": "Website & Web Technology",
+    "input_types": [
+      "domain",
+      "website",
+      "url",
+      "subdomain"
+    ],
+    "output_types": [
+      "company",
+      "service",
+      "ioc"
+    ],
+    "requires_api_key": false,
+    "is_passive": false,
+    "status": "SKIP",
+    "reason": "No entity of type ['domain', 'website', 'url', 'subdomain'] in test investigation"
+  },
+  {
+    "id": "builtin.wayback_machine",
+    "name": "Wayback Machine Archive Search",
+    "category": "Web Archive Intelligence",
+    "input_types": [
+      "domain",
+      "website"
+    ],
+    "output_types": [
+      "url"
+    ],
+    "requires_api_key": false,
+    "is_passive": true,
+    "status": "SKIP",
+    "reason": "No entity of type ['domain', 'website'] in test investigation"
+  },
+  {
+    "id": "builtin.email_intel",
+    "name": "Email Security & Profile Analyzer",
+    "category": "Email Intelligence",
+    "input_types": [
+      "email",
+      "domain"
+    ],
+    "output_types": [
+      "domain",
+      "social_profile",
+      "ioc",
+      "company"
+    ],
+    "requires_api_key": false,
+    "is_passive": true,
+    "status": "SKIP",
+    "reason": "No entity of type ['email', 'domain'] in test investigation"
+  },
+  {
+    "id": "builtin.maigret",
+    "name": "Maigret Username Profiler",
+    "category": "Username Intelligence",
+    "input_types": [
+      "username",
+      "person"
+    ],
+    "output_types": [
+      "social_profile",
+      "url",
+      "website"
+    ],
+    "requires_api_key": false,
+    "is_passive": true,
+    "status": "SKIP",
+    "reason": "No entity of type ['username', 'person'] in test investigation"
+  },
+  {
+    "id": "builtin.github_intel",
+    "name": "GitHub Developer & Repo Intelligence",
+    "category": "GitHub & Code Intelligence",
+    "input_types": [
+      "username",
+      "organization",
+      "company",
+      "person"
+    ],
+    "output_types": [
+      "repository",
+      "email",
+      "website",
+      "company"
+    ],
+    "requires_api_key": false,
+    "is_passive": true,
+    "status": "SKIP",
+    "reason": "No entity of type ['username', 'organization', 'company', 'person'] in test investigation"
+  },
+  {
+    "id": "builtin.public_profiles",
+    "name": "Public Profile Correlator",
+    "category": "Social / Public Profile",
+    "input_types": [
+      "username",
+      "person"
+    ],
+    "output_types": [
+      "social_profile",
+      "wallet",
+      "website"
+    ],
+    "requires_api_key": false,
+    "is_passive": true,
+    "status": "SKIP",
+    "reason": "No entity of type ['username', 'person'] in test investigation"
+  },
+  {
+    "id": "builtin.document_intel",
+    "name": "Document Metadata & Link Extractor",
+    "category": "Document Intelligence",
+    "input_types": [
+      "file",
+      "pdf_file",
+      "word_file",
+      "excel_file",
+      "image_file",
+      "url"
+    ],
+    "output_types": [
+      "person",
+      "company",
+      "url",
+      "email",
+      "hash"
+    ],
+    "requires_api_key": false,
+    "is_passive": true,
+    "status": "SKIP",
+    "reason": "No entity of type ['file', 'pdf_file', 'word_file', 'excel_file', 'image_file', 'url'] in test investigation"
+  },
+  {
+    "id": "builtin.nmap",
+    "name": "Nmap Port Scanner",
+    "category": "Internet Asset Discovery",
+    "input_types": [
+      "ip_address",
+      "ipv6_address"
+    ],
+    "output_types": [
+      "service",
+      "port"
+    ],
+    "requires_api_key": false,
+    "is_passive": true,
+    "status": "SKIP",
+    "reason": "No entity of type ['ip_address', 'ipv6_address'] in test investigation"
+  },
+  {
+    "id": "builtin.virustotal_ip",
+    "name": "VirusTotal IP Reputation",
+    "category": "Threat Intelligence",
+    "input_types": [
+      "ip_address",
+      "ipv6_address"
+    ],
+    "output_types": [
+      "reputation"
+    ],
+    "requires_api_key": false,
+    "is_passive": true,
+    "status": "SKIP",
+    "reason": "No entity of type ['ip_address', 'ipv6_address'] in test investigation"
+  },
+  {
+    "id": "builtin.abuseipdb",
+    "name": "AbuseIPDB Threat Intelligence",
+    "category": "Threat Intelligence",
+    "input_types": [
+      "ip_address",
+      "ipv6_address"
+    ],
+    "output_types": [
+      "ioc",
+      "company",
+      "country"
+    ],
+    "requires_api_key": true,
+    "is_passive": true,
+    "status": "SKIP",
+    "reason": "No entity of type ['ip_address', 'ipv6_address'] in test investigation"
+  },
+  {
+    "id": "builtin.alienvault_otx",
+    "name": "AlienVault OTX Threat Intelligence",
+    "category": "Threat Intelligence",
+    "input_types": [
+      "domain",
+      "ip_address",
+      "hash",
+      "url",
+      "subdomain"
+    ],
+    "output_types": [
+      "ioc",
+      "threat_actor",
+      "malware",
+      "cve"
+    ],
+    "requires_api_key": false,
+    "is_passive": true,
+    "status": "SKIP",
+    "reason": "No entity of type ['domain', 'ip_address', 'hash', 'url', 'subdomain'] in test investigation"
+  },
+  {
+    "id": "builtin.malware_bazaar",
+    "name": "MalwareBazaar Hash Intelligence",
+    "category": "Malware & File Intelligence",
+    "input_types": [
+      "hash",
+      "file",
+      "ioc"
+    ],
+    "output_types": [
+      "malware",
+      "threat_actor",
+      "ioc",
+      "file"
+    ],
+    "requires_api_key": false,
+    "is_passive": true,
+    "status": "SKIP",
+    "reason": "No entity of type ['hash', 'file', 'ioc'] in test investigation"
+  },
+  {
+    "id": "builtin.greynoise",
+    "name": "GreyNoise Scanner Intelligence",
+    "category": "Threat Intelligence",
+    "input_types": [
+      "ip_address",
+      "ipv6_address"
+    ],
+    "output_types": [
+      "ioc",
+      "company",
+      "malware"
+    ],
+    "requires_api_key": false,
+    "is_passive": true,
+    "status": "SKIP",
+    "reason": "No entity of type ['ip_address', 'ipv6_address'] in test investigation"
+  },
+  {
+    "id": "builtin.cloud_detector",
+    "name": "Cloud Provider & Infrastructure Detector",
+    "category": "Cloud & ASN Intelligence",
+    "input_types": [
+      "ip_address",
+      "domain",
+      "subdomain",
+      "website"
+    ],
+    "output_types": [
+      "cloud_asset",
+      "company",
+      "asn"
+    ],
+    "requires_api_key": false,
+    "is_passive": true,
+    "status": "SKIP",
+    "reason": "No entity of type ['ip_address', 'domain', 'subdomain', 'website'] in test investigation"
+  },
+  {
+    "id": "builtin.bgp_route",
+    "name": "BGP Route & Peering Intelligence",
+    "category": "Cloud & ASN Intelligence",
+    "input_types": [
+      "ip_address",
+      "asn",
+      "netblock"
+    ],
+    "output_types": [
+      "asn",
+      "company",
+      "netblock",
+      "country"
+    ],
+    "requires_api_key": false,
+    "is_passive": true,
+    "status": "SKIP",
+    "reason": "No entity of type ['ip_address', 'asn', 'netblock'] in test investigation"
+  },
+  {
+    "id": "builtin.rdap",
+    "name": "RDAP Domain & IP Registration Intel",
+    "category": "Domain & DNS",
+    "input_types": [
+      "domain",
+      "ip_address",
+      "asn",
+      "website"
+    ],
+    "output_types": [
+      "company",
+      "nameserver",
+      "person",
+      "country"
+    ],
+    "requires_api_key": false,
+    "is_passive": true,
+    "status": "SKIP",
+    "reason": "No entity of type ['domain', 'ip_address', 'asn', 'website'] in test investigation"
+  },
+  {
+    "id": "builtin.cve_intel",
+    "name": "NVD & CISA KEV Vulnerability Intel",
+    "category": "Security & Vulnerability",
+    "input_types": [
+      "cve",
+      "company",
+      "server",
+      "ioc"
+    ],
+    "output_types": [
+      "cve",
+      "company",
+      "ioc"
+    ],
+    "requires_api_key": false,
+    "is_passive": true,
+    "status": "SKIP",
+    "reason": "No entity of type ['cve', 'company', 'server', 'ioc'] in test investigation"
+  },
+  {
+    "id": "builtin.osm_geocoding",
+    "name": "OpenStreetMap Geospatial Geocoder",
+    "category": "Geospatial Intelligence",
+    "input_types": [
+      "country",
+      "city",
+      "street_address",
+      "gps_coordinate"
+    ],
+    "output_types": [
+      "gps_coordinate",
+      "country",
+      "city"
+    ],
+    "requires_api_key": false,
+    "is_passive": true,
+    "status": "SKIP",
+    "reason": "No entity of type ['country', 'city', 'street_address', 'gps_coordinate'] in test investigation"
+  }
+]

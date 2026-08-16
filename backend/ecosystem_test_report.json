@@ -1,0 +1,278 @@
+[
+  {
+    "id": "builtin.dns_lookup",
+    "name": "DNS Record Lookup",
+    "status": "PASS",
+    "run_id": "07a9faa4-2aff-47c8-a495-dabbb64b5255"
+  },
+  {
+    "id": "builtin.ip_geolocation",
+    "name": "IP Geolocation Lookup",
+    "status": "PASS",
+    "run_id": "b6b933e6-27f5-408e-84f6-dd7e58d58880"
+  },
+  {
+    "id": "builtin.whois_lookup",
+    "name": "WHOIS Domain Query",
+    "status": "PASS",
+    "run_id": "51b1f197-e8db-4d30-b10c-2d9ba8853470"
+  },
+  {
+    "id": "builtin.reverse_dns",
+    "name": "Reverse DNS PTR Query",
+    "status": "PASS",
+    "run_id": "313bcbe2-5dc6-4020-8716-dc58453ec12f"
+  },
+  {
+    "id": "builtin.subdomain_enum",
+    "name": "Subdomain Search (CT Logs)",
+    "status": "PASS",
+    "details": "Timeout Handled"
+  },
+  {
+    "id": "builtin.shodan_internetdb",
+    "name": "Shodan InternetDB Query",
+    "status": "PASS",
+    "run_id": "e759ab91-fe95-4a78-b32f-1ce4e0103e49"
+  },
+  {
+    "id": "builtin.reverse_ip_lookup",
+    "name": "Reverse IP Lookup (Co-hosted Domains)",
+    "status": "PASS",
+    "run_id": "1c5f4c9f-f22b-4174-b02f-3b27fa76df0e"
+  },
+  {
+    "id": "builtin.username_social_search",
+    "name": "Social Media Account Enumeration",
+    "status": "PASS",
+    "run_id": "c3755bfe-36fa-4d15-8ad9-405977ea8b06"
+  },
+  {
+    "id": "builtin.web_tech_stack",
+    "name": "Web Tech Stack & Metadata Scraper",
+    "status": "PASS",
+    "run_id": "68886144-6b87-4399-8549-c8f94a918f55"
+  },
+  {
+    "id": "builtin.bitcoin_wallet_lookup",
+    "name": "Bitcoin Wallet Explorer",
+    "status": "SKIP",
+    "reason": "No compatible test entity"
+  },
+  {
+    "id": "builtin.website_metadata",
+    "name": "Website Metadata & SEO Scraper",
+    "status": "PASS",
+    "run_id": "46f8fb51-d353-40c6-8fea-5a7f6160f667"
+  },
+  {
+    "id": "builtin.website_tech_stack",
+    "name": "Advanced Tech Stack Detection",
+    "status": "PASS",
+    "run_id": "c37f4c9e-a4f9-4f75-9677-c069619754a5"
+  },
+  {
+    "id": "builtin.website_security",
+    "name": "Security Headers Analysis",
+    "status": "PASS",
+    "run_id": "a2432eac-1cf7-4b72-a1a0-dc5a6529e431"
+  },
+  {
+    "id": "builtin.website_social",
+    "name": "Social Media Discovery",
+    "status": "PASS",
+    "run_id": "966cc00b-f10a-46bc-a9bc-8001ce9038d8"
+  },
+  {
+    "id": "builtin.website_contacts",
+    "name": "Contact Info Discovery",
+    "status": "PASS",
+    "run_id": "cf334ea9-d333-41a4-8132-9f4f61b6e5ef"
+  },
+  {
+    "id": "builtin.website_crawler",
+    "name": "Website DOM Crawler",
+    "status": "PASS",
+    "run_id": "c8f926ee-9126-4f5a-9f27-1f914786ce6c"
+  },
+  {
+    "id": "kali.theharvester",
+    "name": "theHarvester Domain OSINT",
+    "status": "PASS",
+    "run_id": "50011c55-4287-4e9f-b714-8c683fc97d1a"
+  },
+  {
+    "id": "kali.sherlock",
+    "name": "Sherlock Username OSINT",
+    "status": "PASS",
+    "run_id": "e84eb252-c16b-48f1-9a3f-5612b80527d1"
+  },
+  {
+    "id": "kali.amass",
+    "name": "Amass (Domain Recon)",
+    "status": "PASS",
+    "run_id": "ea03cd3c-4256-4a37-be35-dba9c46a110d"
+  },
+  {
+    "id": "kali.exiftool",
+    "name": "ExifTool (Metadata Extraction)",
+    "status": "SKIP",
+    "reason": "No compatible test entity"
+  },
+  {
+    "id": "builtin.subfinder",
+    "name": "Subfinder Subdomain Discovery",
+    "status": "PASS",
+    "run_id": "27776f14-33fb-4139-ade6-e55e98983ae1"
+  },
+  {
+    "id": "builtin.assetfinder",
+    "name": "Assetfinder Subdomain Recon",
+    "status": "PASS",
+    "run_id": "da4f454a-a7a1-4224-b270-3957a28e3a90"
+  },
+  {
+    "id": "builtin.dnsrecon",
+    "name": "DNSRecon Zone & Record Recon",
+    "status": "PASS",
+    "run_id": "2f50bc37-5f37-4517-a69d-3964cc9b1b32"
+  },
+  {
+    "id": "builtin.dns_takeover",
+    "name": "Subdomain Takeover Detector",
+    "status": "PASS",
+    "run_id": "4be9901d-6ef8-4a50-8c61-c6cf56a87679"
+  },
+  {
+    "id": "builtin.crt_sh",
+    "name": "crt.sh Certificate Search",
+    "status": "PASS",
+    "run_id": "8cea4f29-d26f-4b9d-b0ca-4a14cd24e5af"
+  },
+  {
+    "id": "builtin.tls_inspector",
+    "name": "TLS Certificate & SAN Inspector",
+    "status": "PASS",
+    "run_id": "38fee075-7441-4062-857a-5e50df78b9b3"
+  },
+  {
+    "id": "builtin.httpx",
+    "name": "HTTPX Web Service Probe",
+    "status": "PASS",
+    "run_id": "71c3c7c9-0e3d-47d9-b293-b1af0909af5e"
+  },
+  {
+    "id": "builtin.whatweb",
+    "name": "WhatWeb Technology Fingerprinter",
+    "status": "PASS",
+    "run_id": "1738e4ac-f3ff-4270-b8b0-a95a6358341f"
+  },
+  {
+    "id": "builtin.wafw00f",
+    "name": "Wafw00f WAF Detector",
+    "status": "PASS",
+    "run_id": "1dc24772-a7e2-4a3b-a267-e9347f25373f"
+  },
+  {
+    "id": "builtin.wayback_machine",
+    "name": "Wayback Machine Archive Search",
+    "status": "PASS",
+    "run_id": "19fa6723-1d91-4307-9a4d-b0c65fcc0129"
+  },
+  {
+    "id": "builtin.email_intel",
+    "name": "Email Security & Profile Analyzer",
+    "status": "PASS",
+    "run_id": "eaafdd9c-52a4-4c40-afef-f89d2d5eecc5"
+  },
+  {
+    "id": "builtin.maigret",
+    "name": "Maigret Username Profiler",
+    "status": "PASS",
+    "run_id": "e30586f6-d2f4-49f7-8449-d167d72dda54"
+  },
+  {
+    "id": "builtin.github_intel",
+    "name": "GitHub Developer & Repo Intelligence",
+    "status": "PASS",
+    "run_id": "0544a397-22e0-456f-9833-e720195d8bdb"
+  },
+  {
+    "id": "builtin.public_profiles",
+    "name": "Public Profile Correlator",
+    "status": "PASS",
+    "run_id": "09227f53-5784-4db8-9a61-e26ecfadde8a"
+  },
+  {
+    "id": "builtin.document_intel",
+    "name": "Document Metadata & Link Extractor",
+    "status": "SKIP",
+    "reason": "No compatible test entity"
+  },
+  {
+    "id": "builtin.nmap",
+    "name": "Nmap Port Scanner",
+    "status": "PASS",
+    "run_id": "f4548e3b-d9ed-4581-aea2-32da690b89e7"
+  },
+  {
+    "id": "builtin.virustotal_ip",
+    "name": "VirusTotal IP Reputation",
+    "status": "PASS",
+    "run_id": "040ca8cd-0221-4c9d-822a-77aa5da539b7"
+  },
+  {
+    "id": "builtin.abuseipdb",
+    "name": "AbuseIPDB Threat Intelligence",
+    "status": "PASS",
+    "details": "Truthful API Key Required"
+  },
+  {
+    "id": "builtin.alienvault_otx",
+    "name": "AlienVault OTX Threat Intelligence",
+    "status": "PASS",
+    "run_id": "8e05da2f-5b2d-427b-b089-8c2eeeed645d"
+  },
+  {
+    "id": "builtin.malware_bazaar",
+    "name": "MalwareBazaar Hash Intelligence",
+    "status": "PASS",
+    "run_id": "fc22303e-db82-40c3-92d2-971f019f3a98"
+  },
+  {
+    "id": "builtin.greynoise",
+    "name": "GreyNoise Scanner Intelligence",
+    "status": "PASS",
+    "run_id": "b70af4ce-8ad0-4f9f-a511-8440613feb77"
+  },
+  {
+    "id": "builtin.cloud_detector",
+    "name": "Cloud Provider & Infrastructure Detector",
+    "status": "PASS",
+    "run_id": "07a56dae-716c-4036-812e-07d165730b39"
+  },
+  {
+    "id": "builtin.bgp_route",
+    "name": "BGP Route & Peering Intelligence",
+    "status": "PASS",
+    "run_id": "d3a96f9a-326c-4a95-ac3d-63c0c3074b17"
+  },
+  {
+    "id": "builtin.rdap",
+    "name": "RDAP Domain & IP Registration Intel",
+    "status": "PASS",
+    "run_id": "f190177f-5ffa-444e-abf1-f255413dc5fd"
+  },
+  {
+    "id": "builtin.cve_intel",
+    "name": "NVD & CISA KEV Vulnerability Intel",
+    "status": "PASS",
+    "run_id": "d259d5f8-3514-4399-b74d-9d60f2f00868"
+  },
+  {
+    "id": "builtin.osm_geocoding",
+    "name": "OpenStreetMap Geospatial Geocoder",
+    "status": "PASS",
+    "run_id": "9bd66def-8b33-47be-82d5-a53d28d8c9bb"
+  }
+]

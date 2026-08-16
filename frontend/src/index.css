@@ -1,0 +1,437 @@
+@import "tailwindcss";
+
+/* ============================================================
+   VESTIGIUM — Enterprise SOC & Defense Design System
+   Inspired by Palantir Gotham, Maltego, VS Code & IBM i2
+   ============================================================
+   Design Philosophy:
+   - High Density & Sharp Contrast
+   - Dark-first, Zero Cartoon Elements, Zero Playful Gradients
+   - Sharp 4px borders, Compact padding, Precision Typography
+   ============================================================ */
+
+@theme {
+  --color-vestigium-bg: #090d16;
+  --color-vestigium-surface-1: #0f172a;
+  --color-vestigium-surface-2: #1e293b;
+  --color-vestigium-surface-3: #334155;
+  --color-vestigium-border: #1e293b;
+  --color-vestigium-border-light: #334155;
+  --color-vestigium-border-accent: #3b82f6;
+
+  --color-vestigium-text: #f8fafc;
+  --color-vestigium-text-dim: #cbd5e1;
+  --color-vestigium-text-muted: #64748b;
+
+  --color-vestigium-primary: #2563eb;
+  --color-vestigium-primary-hover: #1d4ed8;
+  --color-vestigium-accent: #0284c7;
+
+  --color-vestigium-success: #10b981;
+  --color-vestigium-warning: #f59e0b;
+  --color-vestigium-danger: #ef4444;
+  --color-vestigium-info: #06b6d4;
+
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+}
+
+/* ---- Global Resets ---- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--color-vestigium-bg);
+  color: var(--color-vestigium-text);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  /* Premium deep space radial background */
+  background: radial-gradient(circle at 50% -20%, #0f172a 0%, #020617 70%, #000000 100%);
+}
+
+/* Subtle grid overlay for the graph background */
+.grid-bg {
+  background-image: 
+    linear-gradient(to right, rgba(30, 41, 59, 0.3) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(30, 41, 59, 0.3) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* ---- Scrollbar (VS Code style) ---- */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #090d16;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* ---- High-Density Panel Container (Glassmorphism) ---- */
+.soc-panel {
+  background-color: rgba(15, 23, 42, 0.6); /* Translucent slate-900 */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(51, 65, 85, 0.5); /* Subtle border */
+  border-radius: 8px; /* Slightly rounder for modern feel */
+  box-shadow: 0 4px 24px -4px rgba(0, 0, 0, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+}
+
+.soc-header {
+  background-color: rgba(11, 17, 32, 0.5);
+  border-bottom: 1px solid rgba(51, 65, 85, 0.5);
+  padding: 8px 14px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 8px 8px 0 0;
+}
+
+/* ---- High-Density Button ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid transparent;
+  outline: none;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #ffffff;
+  border-color: #3b82f6;
+  box-shadow: 0 0 10px rgba(37, 99, 235, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  box-shadow: 0 0 15px rgba(37, 99, 235, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background-color: #1e293b;
+  color: #f8fafc;
+  border-color: #334155;
+}
+
+.btn-secondary:hover {
+  background-color: #334155;
+  border-color: #475569;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: #94a3b8;
+}
+
+.btn-ghost:hover {
+  background-color: #1e293b;
+  color: #f8fafc;
+}
+
+.btn-danger {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: #fca5a5;
+  border-color: rgba(239, 68, 68, 0.4);
+}
+
+.btn-danger:hover {
+  background-color: rgba(239, 68, 68, 0.3);
+}
+
+/* ---- High-Density Input ---- */
+.input {
+  width: 100%;
+  padding: 5px 10px;
+  background-color: #0b1120;
+  border: 1px solid #1e293b;
+  border-radius: 4px;
+  color: #f8fafc;
+  font-size: 12px;
+  font-family: var(--font-sans);
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 1px #2563eb;
+}
+
+.input::placeholder {
+  color: #475569;
+}
+
+/* ---- High-Density Badge ---- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-family: var(--font-mono);
+}
+
+/* ---- React Flow Overrides (Palantir/Maltego Style) ---- */
+.react-flow__background {
+  /* Override default bg since we use radial gradient in #root */
+  background-color: transparent !important;
+}
+
+.react-flow__minimap {
+  background-color: rgba(15, 23, 42, 0.6) !important;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(51, 65, 85, 0.5) !important;
+  border-radius: 8px !important;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.react-flow__controls {
+  border: 1px solid #1e293b !important;
+  border-radius: 4px !important;
+  box-shadow: none !important;
+}
+
+.react-flow__controls-button {
+  background-color: #0f172a !important;
+  border-color: #1e293b !important;
+  color: #94a3b8 !important;
+  fill: #94a3b8 !important;
+}
+
+.react-flow__controls-button:hover {
+  background-color: #1e293b !important;
+  color: #f8fafc !important;
+  fill: #f8fafc !important;
+}
+
+.react-flow__edge-path {
+  stroke: #475569 !important;
+  stroke-width: 1.5;
+}
+
+.react-flow__edge.selected .react-flow__edge-path {
+  stroke: #2563eb !important;
+  stroke-width: 2.2;
+}
+
+/* Edge Labels: Dark pill style */
+.react-flow__edge-textbg {
+  fill: #0f172a !important;
+  fill-opacity: 0.95 !important;
+  rx: 3px !important;
+  ry: 3px !important;
+  stroke: #1e293b !important;
+  stroke-width: 1px !important;
+}
+
+.react-flow__edge-text {
+  fill: #cbd5e1 !important;
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  font-family: var(--font-mono) !important;
+}
+
+/* Handles: Subtle fade-in on hover */
+.react-flow__handle {
+  width: 7px !important;
+  height: 7px !important;
+  background-color: #2563eb !important;
+  border: 1px solid #0f172a !important;
+  border-radius: 2px !important;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.react-flow__node:hover .react-flow__handle {
+  opacity: 1;
+}
+
+/* ---- Node Card (Glowing Glassmorphism) ---- */
+.vestigium-node {
+  background: rgba(15, 23, 42, 0.85); /* Very dark, slight transparency */
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--node-color, #1e293b);
+  border-radius: 6px;
+  padding: 8px 14px;
+  min-width: 220px;
+  max-width: 280px;
+  transition: all 0.2s ease;
+  cursor: grab;
+  /* Soft inner and outer glow based on entity color */
+  box-shadow: 0 0 10px -2px var(--node-color, transparent), inset 0 0 8px -4px var(--node-color, transparent);
+}
+
+.vestigium-node:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px 0 var(--node-color, rgba(59, 130, 246, 0.4)), inset 0 0 12px -2px var(--node-color, transparent);
+}
+
+.vestigium-node.selected {
+  border-width: 2px;
+  padding: 7px 13px; /* Compensate for thicker border */
+  box-shadow: 0 0 20px 2px var(--node-color, rgba(59, 130, 246, 0.6)), inset 0 0 16px -2px var(--node-color, transparent);
+}
+
+/* ---- High-Density Tables ---- */
+.soc-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.soc-table th {
+  background-color: #0b1120;
+  color: #64748b;
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 6px 10px;
+  text-align: left;
+  border-bottom: 1px solid #1e293b;
+}
+
+.soc-table td {
+  padding: 6px 10px;
+  border-bottom: 1px solid #1e293b;
+  color: #e2e8f0;
+}
+
+.soc-table tr:hover td {
+  background-color: #1e293b;
+}
+
+/* ---- Key-Value List Grid ---- */
+.kv-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 8px;
+  border-bottom: 1px solid #1e293b;
+  font-size: 11px;
+}
+
+.kv-key {
+  color: #64748b;
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.kv-val {
+  color: #f8fafc;
+  font-family: var(--font-mono);
+}
+
+/* ============================================================
+   State-of-the-Art Animations & Micro-Interactions
+   ============================================================ */
+
+@keyframes pulse-glow-red {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); border-color: rgba(239, 68, 68, 0.5); }
+  50% { box-shadow: 0 0 20px 2px rgba(239, 68, 68, 0.2); border-color: rgba(239, 68, 68, 0.8); }
+}
+
+.animate-pulse-glow-red {
+  animation: pulse-glow-red 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+@keyframes pulse-glow-blue {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4); border-color: rgba(59, 130, 246, 0.5); }
+  50% { box-shadow: 0 0 20px 2px rgba(59, 130, 246, 0.2); border-color: rgba(59, 130, 246, 0.8); }
+}
+
+.animate-pulse-glow-blue {
+  animation: pulse-glow-blue 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+@keyframes slide-up-fade {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-slide-up {
+  animation: slide-up-fade 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes cascade-in {
+  0% { opacity: 0; transform: translateX(-10px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+.animate-cascade-in {
+  animation: cascade-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Staggered animation utility for children */
+.stagger-1 { animation-delay: 50ms; }
+.stagger-2 { animation-delay: 100ms; }
+.stagger-3 { animation-delay: 150ms; }
+.stagger-4 { animation-delay: 200ms; }
+.stagger-5 { animation-delay: 250ms; }
+
+/* Enhanced Glassmorphism for Drawers */
+.glass-drawer {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: -10px 0 40px -10px rgba(0, 0, 0, 0.7);
+}
+
+@keyframes flow-dash {
+  to {
+    stroke-dashoffset: -1000;
+  }
+}
+
+.animate-flow-dash {
+  animation: flow-dash 30s linear infinite;
+}

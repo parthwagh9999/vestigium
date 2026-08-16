@@ -1,0 +1,132 @@
+version: "3.9"
+
+services:
+  # ---- Backend API ----
+  api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: vestigium-api
+    ports:
+      - "${APP_PORT:-8000}:8000"
+    environment:
+      - DATABASE_URL=${DATABASE_URL:-sqlite+aiosqlite:///./vestigium.db}
+      - APP_SECRET_KEY=${APP_SECRET_KEY:-dev-secret-key-change-in-production}
+      - JWT_SECRET_KEY=${JWT_SECRET_KEY:-dev-jwt-secret-change-in-production}
+      - REDIS_URL=${REDIS_URL:-}
+      - CELERY_BROKER_URL=${CELERY_BROKER_URL:-}
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+      - UPLOAD_DIR=/app/uploads
+      - BACKUP_DIR=/app/backups
+      - PLUGIN_DIR=/app/plugins
+    volumes:
+      - vestigium-data:/app/data
+      - vestigium-uploads:/app/uploads
+      - vestigium-backups:/app/backups
+      - vestigium-plugins:/app/plugins
+    depends_on:
+      redis:
+        condition: service_started
+        required: false
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import httpx; httpx.get('http://localhost:8000/api/v1/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    networks:
+      - vestigium-net
+
+  # ---- Background Worker (optional — requires Redis) ----
+  worker:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: vestigium-worker
+    command: ["python", "-m", "celery", "-A", "app.workers.celery_app", "worker", "--loglevel=info", "--concurrency=4"]
+    environment:
+      - DATABASE_URL=${DATABASE_URL:-sqlite+aiosqlite:///./vestigium.db}
+      - REDIS_URL=${REDIS_URL:-redis://redis:6379/0}
+      - CELERY_BROKER_URL=${CELERY_BROKER_URL:-redis://redis:6379/0}
+      - CELERY_RESULT_BACKEND=${CELERY_RESULT_BACKEND:-redis://redis:6379/1}
+      - PLUGIN_DIR=/app/plugins
+    volumes:
+      - vestigium-data:/app/data
+      - vestigium-uploads:/app/uploads
+      - vestigium-plugins:/app/plugins
+    depends_on:
+      - redis
+    restart: unless-stopped
+    profiles:
+      - with-redis
+    networks:
+      - vestigium-net
+
+  # ---- Frontend ----
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: vestigium-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - api
+    restart: unless-stopped
+    networks:
+      - vestigium-net
+
+  # ---- Redis (optional) ----
+  redis:
+    image: redis:7-alpine
+    container_name: vestigium-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - vestigium-redis:/data
+    restart: unless-stopped
+    profiles:
+      - with-redis
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - vestigium-net
+
+  # ---- PostgreSQL (optional) ----
+  postgres:
+    image: postgres:16-alpine
+    container_name: vestigium-postgres
+    environment:
+      POSTGRES_USER: vestigium
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-vestigium}
+      POSTGRES_DB: vestigium
+    ports:
+      - "5432:5432"
+    volumes:
+      - vestigium-postgres:/var/lib/postgresql/data
+    restart: unless-stopped
+    profiles:
+      - with-postgres
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U vestigium"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - vestigium-net
+
+volumes:
+  vestigium-data:
+  vestigium-uploads:
+  vestigium-backups:
+  vestigium-plugins:
+  vestigium-redis:
+  vestigium-postgres:
+
+networks:
+  vestigium-net:
+    driver: bridge

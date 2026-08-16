@@ -1,0 +1,130 @@
+# ============================================
+# VESTIGIUM — .gitignore
+# ============================================
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+*.whl
+.Python
+develop-eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.manifest
+*.spec
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Testing
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Mypy / type checkers
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pytype/
+
+# Ruff
+.ruff_cache/
+
+# ---- Node.js ----
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-store/
+
+# Build output
+frontend/dist/
+frontend/build/
+*.tsbuildinfo
+
+# ---- IDE ----
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# ---- OS ----
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ---- Docker ----
+docker-compose.override.yml
+
+# ---- Project Specific ----
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Secrets and environment
+.env
+.env.*
+!.env.example
+
+# Uploaded files
+uploads/
+media/
+
+# Backup files
+backups/
+
+# Log files
+logs/
+*.log
+
+# Plugin data
+plugins/installed/
+plugins/cache/
+
+# Redis dump
+dump.rdb
+
+# Alembic auto-generated
+backend/alembic/versions/*.pyc
+
+# Coverage reports
+reports/
+
+# Generated API docs
+docs/generated/
