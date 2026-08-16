@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/VESTIGIUM-blue?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTIgMkw0IDdWMTdMMTIgMjJMMjAgMTdWN0wxMiAyWiIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIi8+PC9zdmc+" alt="VESTIGIUM" />
+  <img src="./VESTIGIUM_LOGO.png" alt="VESTIGIUM Logo" width="128" />
 </p>
 
-<h1 align="center">🛡️ VESTIGIUM</h1>
+<h1 align="center">VESTIGIUM</h1>
 
 <p align="center">
   <strong>Enterprise-grade, open-source OSINT investigation platform with visual link-analysis</strong>
