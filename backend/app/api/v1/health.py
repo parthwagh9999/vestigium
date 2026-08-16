@@ -17,5 +17,5 @@ async def health_check() -> dict:
     return {
         "status": "healthy",
         "service": "vestigium",
-        "version": "0.1.0",
+        "version": "1.1",
     }

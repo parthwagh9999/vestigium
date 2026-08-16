@@ -42,7 +42,7 @@ class Settings(BaseSettings):
     app_port: int = 8000
     app_secret_key: str = secrets.token_urlsafe(32)
     app_cors_origins: str = "http://localhost:5173,http://localhost:3000"
-    app_version: str = "0.1.0"
+    app_version: str = "1.1"
 
     # ---- Database ----
     database_url: str = "sqlite+aiosqlite:///./vestigium.db"

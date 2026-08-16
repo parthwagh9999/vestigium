@@ -131,7 +131,7 @@ export default function Dashboard() {
           </div>
           <div>
             <h1 className="text-sm font-bold text-white">VESTIGIUM</h1>
-            <p className="text-[10px]" style={{ color: 'var(--color-vestigium-text-muted)' }}>v0.1.0</p>
+            <p className="text-[10px]" style={{ color: 'var(--color-vestigium-text-muted)' }}>v1.1</p>
           </div>
         </div>
 
